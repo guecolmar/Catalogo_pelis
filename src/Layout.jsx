@@ -5,16 +5,26 @@ import Footer from './components/Footer';
 import Header from './components/Header';
 import './css/App.css'
 import { Outlet } from 'react-router-dom';
+import React, { createContext, useState } from 'react'
 
+export const userIdContext = createContext();
 
 const Layout = () => {
+  const [userComprobaciones, setUserComprobaciones] = useState([])
+  const login = (usuario) => {
+    setUserComprobaciones(usuario)
+  };
 
   return (
-    <>  
-      <Header />
-      <Outlet />
-      <Footer />
-    </>
+    <userContext.Provider value={{userComprobaciones, setUserComprobaciones, login}}>
+      <>  
+        <Header />
+        <main>
+          <Outlet />
+        </main>
+        <Footer />
+      </>
+    </userContext.Provider>
   )
 }
 
