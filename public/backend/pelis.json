@@ -1,0 +1,52 @@
+{
+    "usuarios": [
+        {
+            "id":"user-25",
+            "nombre":"Tomi",
+            "clave":"1234!"
+        },
+        {
+            "id":"user-54",
+            "nombre":"Carmen",
+            "clave":"4321"
+        }
+    ],
+    "peliculas": [
+        {
+            "id":"peli-1",
+            "idUsuario":"user-25",
+            "titulo":"Peli 1",
+            "director": "lalalal",
+            "imagen":"https://placehold.co/600x400?text=Peli\nPrimera",
+            "anio":1974,
+            "isVista":false
+        },
+        {
+            "id":"peli-2",
+            "idUsuario":"user-25",
+            "titulo":"Peli 2",
+            "director": "lelelelele",
+            "imagen":"https://placehold.co/600x400?text=Peli\nSegunda",
+            "anio":1974,
+            "isVista":false
+        },
+        {
+            "id":"peli-3",
+            "idUsuario":"user-54",
+            "titulo":"Peli 3",
+            "director": "lililili",
+            "imagen":"https://placehold.co/600x400?text=Peli\nTercera",
+            "anio":1974,
+            "isVista":false
+        },
+        {
+            "id":"peli-4",
+            "idUsuario":"user-25",
+            "titulo":"Peli 4",
+            "director": "lulululu",
+            "imagen":"https://placehold.co/600x400?text=Peli\nCuarta",
+            "anio":1974,
+            "isVista":false
+        }
+    ]
+}
