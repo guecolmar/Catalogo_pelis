@@ -37,6 +37,7 @@
   padding: 2em;
   border-radius: 1rem;
   border: 1px solid purple;
+  max-width: 300px;
 }
 
 .read-the-docs {

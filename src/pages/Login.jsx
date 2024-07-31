@@ -1,11 +1,10 @@
 import reactLogo from '../assets/react.svg'
 import { Link } from 'react-router-dom';
 import { userIdContext } from '../Layout';
-import { useState } from 'react';
+import { useState, useEffect, useContext } from 'react';
 
 const Login = () => {
 
-    const [userComprobaciones, setUserComprobaciones, login] = useContext(userIdContext);
     const [listaUsuarios, setListaUsuarios] = useState("")
     const [nombre,setNombre] = useState("")
     const [clave, setClave] = useState("")
@@ -18,7 +17,7 @@ const Login = () => {
         try {
             const result = await fetch("./backend/pelis.json");
             const objeto = await result.json();
-            console.log(objeto)
+            console.log("Fetch",objeto)
             setListaUsuarios(objeto.usuarios)
         } catch (error) {
             console.log("Mi error es: ",error)
@@ -27,7 +26,10 @@ const Login = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        setUserComprobaciones = listaUsuarios.find(datos => datos.nombre && datos.clave)
+        const usuario = listaUsuarios.find(datos => datos.nombre && datos.clave)
+        console.log("Usuarios",usuario)
+        setUserComprobaciones (usuario)
+
         if (userComprobaciones) {
             login(userComprobaciones),
             <Link to="/home"></Link>
